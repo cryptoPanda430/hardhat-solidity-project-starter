@@ -1,7 +1,13 @@
-import { expect } from "chai";
-import { ethers } from "hardhat";
+const { expect } = require("chai");
+const { ethers } = require("hardhat");
+const web3 = require('web3');
+const helpers = require("@nomicfoundation/hardhat-network-helpers");
 
 describe("Greeter", function () {
+  before(async function () {
+    [owner, account1, account2] = await ethers.getSigners();
+  });
+
   it("Should return the new greeting once it's changed", async function () {
     const Greeter = await ethers.getContractFactory("Greeter");
     const greeter = await Greeter.deploy("Hello, world!");
