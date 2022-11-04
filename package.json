@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "main": "index.js",
   "repository": "https://github.com/cryptoPanda430/hardhat-solidity-project-starter.git",
-  "author": "Cryptopanda <kappolopanda@gmail.com>",
+  "author": "Cryptopanda <panda.kk1114@gmail.com>",
   "license": "MIT",
   "scripts": {
     "compile": "npx hardhat compile",
