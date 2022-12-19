@@ -151,6 +151,14 @@ const config: HardhatUserConfig = {
 		},
 	},
 	networks: {
+		mainnet: {
+			url: process.env.MAINNET_RPC || "",
+			accounts:
+				process.env.PRIVATE_KEY !== undefined
+					? [process.env.PRIVATE_KEY]
+					: [],
+			blockGasLimit: 0x1fffffffffffff
+		},
 		goerli: {
 			url: process.env.GOERLI_RPC || "",
 			accounts:
