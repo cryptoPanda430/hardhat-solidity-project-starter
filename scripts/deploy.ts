@@ -28,7 +28,8 @@ async function main() {
   await greeter.deployed();
   console.log("Greeter deployed to:", greeter.address);
   
-  await sleep(20000)
+  const WAIT_BLOCK_CONFIRMATIONS = 6
+	await greeter.deployTransaction.wait(WAIT_BLOCK_CONFIRMATIONS)
 
 	await hre.run("verify:verify", {
 		address: greeter.address,
